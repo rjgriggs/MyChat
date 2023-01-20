@@ -13,3 +13,5 @@ message = st.text_input("Enter your message:")
 if message:
     response = chatbot(message, max_length=50)
     st.write("ChatGPT: ", response[0]["generated_text"])
+    st.write("hello Randy")
+    
