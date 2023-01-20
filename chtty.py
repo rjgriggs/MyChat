@@ -2,7 +2,7 @@ import streamlit as st
 # from transformers import pipeline
 
 # Load the ChatGPT model
-chatbot = pipeline("text-generation", model="microsoft/DialoGPT-medium")
+chatbot = pipeline("text-generation")
 
 st.title("ChatGPT")
 
