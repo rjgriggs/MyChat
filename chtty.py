@@ -1,5 +1,5 @@
 import streamlit as st
-pip install transformers streamlit
+
 from transformers import pipeline
 
 # Set the title of the application
