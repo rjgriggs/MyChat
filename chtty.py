@@ -1,17 +1,16 @@
 import streamlit as st
 from transformers import pipeline
 
-# Load the ChatGPT model
-chatbot = pipeline("text-generation", model="microsoft/DialoGPT-medium")
+# Set the title of the application
+st.title("A sentiment analyser written by ChatGPT")
 
-st.title("ChatGPT")
+# Create the input text field
+text = st.text_input("Enter some text to analyse:")
 
-# Create a text input for the user to type their message
-message = st.text_input("Enter your message:")
+# Use the Hugging Face Pipeline API to create a sentiment classifier
+sentiment_classifier = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")
 
-# If the user enters a message and hits enter, generate a response
-if message:
-    response = chatbot(message, max_length=50)
-    st.write("ChatGPT: ", response[0]["generated_text"])
-    st.write("hello Randy")
-    
+# Evaluate the text entered by the user and display the result
+if text:
+    result = sentiment_classifier(text)[0]
+    st.write(f"Predicted sentiment: {result['label']}")
