@@ -28,7 +28,7 @@ Resources:
         'Fn::Base64': |
           #!/bin/bash
           # Activate the pre-built pytorch environment
-          source activate pytorch_p36
+          source activate pytorch
 
           # Install the libraries "transformers" and "streamlit" via pip
           pip install transformers streamlit
