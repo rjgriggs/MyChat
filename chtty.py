@@ -4,7 +4,8 @@ import os
 import openai
 import streamlit as st
 
-openai.api_key = ["pass"]
+#openai.api_key = ["pass"]
+api = "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"
 st.write("Hey there big daddy")
 st.header("testing this app")
 articleTXT = st.text_area("enter the text you want me to look at")
