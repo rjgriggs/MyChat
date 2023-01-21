@@ -3,7 +3,7 @@ import os
 import openai
 import streamlit as st
 
-openai.api.key = st.secrets['testkey']
+openai.api.key = st.secrets["testkey"]
 # api = "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"
 st.write("Hey there big daddy")
 st.header("testing this app")
