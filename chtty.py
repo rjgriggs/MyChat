@@ -17,7 +17,7 @@ output_size = st.radio( label = "What kind of output do you want?",
 
 if output_size == "To-The-Point":
  out_token = 50
-elseif output_size == "Concise":
+elif output_size == "Concise":
  out_token = 128
 else:
  out_token = 516
@@ -28,7 +28,7 @@ else:
 if len(article_text)>100:
  # Generate the summary
  # .......
-    else:
+  else:
  st.warning("Not enough words to summarize!")
 if st.button("Generate Summary",type=’primary’):
  
