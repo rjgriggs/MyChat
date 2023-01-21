@@ -18,3 +18,6 @@ if len(articleTXT) > 10:
       temperature = temp 
       
     )
+    # print the out generated
+    res = response["choice3s"][0]["text"]
+    st.info(res)
