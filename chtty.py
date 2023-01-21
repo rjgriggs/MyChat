@@ -30,6 +30,7 @@ if len(article_text)>100:
   # .......
 else:
   st.warning("Not enough words to summarize!")
+
 if st.button("Generate Summary",type=’primary’):
  
   # Use GPT-3 to generate a summary of the article
