@@ -26,10 +26,10 @@ else:
 # to summarize, and display a warning if it is not:
 
 if len(article_text)>100:
-  # Generate the summary
-  # .......
+ # Generate the summary
+ # .......
 else:
-  st.warning("Not enough words to summarize!")
+ st.warning("Not enough words to summarize!")
 
 if st.button("Generate Summary",type=’primary’):
  
