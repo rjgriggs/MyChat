@@ -1,6 +1,5 @@
 # from email.policy import default
 import os
-import { Configuration, OpenAIApi } from "openai";
 import openai
 import streamlit as st
 
