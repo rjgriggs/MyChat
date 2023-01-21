@@ -12,7 +12,7 @@ articleTXT = st.text_area("enter the text you want me to look at")
 if len(articleTXT) > 10:
   if st.button("generate results"):
     response = openai.Completion.create(
-      engine = "text-davinci-003"
+      engine = "text-davinci-003",
       prompt = "can you give me the response now? : " + articleTXT
       max_token = 516,
       
