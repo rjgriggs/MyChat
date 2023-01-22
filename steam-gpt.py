@@ -4,7 +4,7 @@ import openai
 
 
 # openai.api.key = st.secrets.key["pass"]
-openai.api.key(**streamlit.secrets["pass"])
+openai.api.key(**st.secrets["pass"])
 # openai.api_key="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"
 # openai.api_key = os.getenv("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")
 def generate_response(prompt):
