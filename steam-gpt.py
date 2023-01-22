@@ -18,7 +18,7 @@ def generate_response(prompt):
   message = completions.choices[0].text
   return message
 st.title("chatbot : Streamlit + openai")
-if 'generated' not in st.sessioin_state:
+if 'generated' not in st.session_state:
   st.session_state['generated'] = []
   
 if 'past' not in st.session_state:
