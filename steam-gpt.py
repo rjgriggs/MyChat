@@ -3,8 +3,8 @@ import os
 import openai
 
 
-openai.api.key = st.secrets["pass"]
-# openai.api_key = "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"
+# openai.api.key = st.secrets["pass"]
+openai.api_key = ('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')
 def generate_response(prompt):
   completions = openai.Completion.create(
     engine = "text-davinci-003",
