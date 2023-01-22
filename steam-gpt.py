@@ -22,7 +22,7 @@ if 'generated' not in st.session_state:
   st.session_state['generated'] = []
   
 if 'past' not in st.session_state:
-  st.session_state['past']
+  st.session_state['past'] = []
   
 def get_text():
   input_text = st.text_input("you: ","Hello, how are you?", key="input")
