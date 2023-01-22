@@ -17,7 +17,7 @@ def generate_response(prompt):
     
   )
   message = completions.choices[0].text
-  return messageCreating the chatbot interface
+  return message
 
 st.title("chatbot : Streamlit + openai")
 if 'generated' not in st.session_state:
