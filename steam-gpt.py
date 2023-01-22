@@ -12,7 +12,7 @@ def generate_response(prompt):
     prompt = prompt,
     max_tokens = 1024,
     n = 1,
-    stop = none,
+    stop = None,
     temperature = 0.5,
     
   )
