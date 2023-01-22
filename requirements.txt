@@ -1,5 +1,4 @@
-openai==0.25.0
-streamlit==1.16.0
+openai
+streamlit
 snowflake-connector-python
-cffi==1.15.0
-
+cffi
