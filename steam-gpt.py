@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 
-openai.api.key = st.secrets["pass"]
+# openai.api.key = st.secrets["pass"]
 # openai.api_key = "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"
 def generate_response(prompt):
   completions = openai.Completion.create(
