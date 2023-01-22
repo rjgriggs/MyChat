@@ -1,7 +1,7 @@
 # from email.policy import default
-import os
-import openai
 import streamlit as st
+import openai
+
 
 openai.api.key = st.secrets['apikey']
 # openai.api_key = "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"
