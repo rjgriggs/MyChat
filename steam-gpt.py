@@ -5,6 +5,7 @@ import openai
 
 # openai.api.key = st.secrets["pass"]
 openai.api_key = ('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')
+
 def generate_response(prompt):
   completions = openai.Completion.create(
     engine = "text-davinci-003",
@@ -16,7 +17,8 @@ def generate_response(prompt):
     
   )
   message = completions.choices[0].text
-  return message
+  return messageCreating the chatbot interface
+
 st.title("chatbot : Streamlit + openai")
 if 'generated' not in st.session_state:
   st.session_state['generated'] = []
@@ -39,5 +41,5 @@ if user_input:
 if st.session_state['generated']:
   
   for i in range(len(st.session_state['generated']) -1, -1, -1):
-    message(st.session_state["generated"][i], key=str(i))
+    message(st.session_state['generated'][i], key=str(i))
     message(st.session_state['past'][i], is_user = True, key=str(i) + '_user')
