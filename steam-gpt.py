@@ -5,7 +5,7 @@ import openai
 
 # openai.api.key = st.secrets["pass"]
 # openai.api_key = ('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')
-os.environ["OPENAI_API_KEY"] = "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"
+openai.api_key = os.environ("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")
 def generate_response(prompt):
   completions = openai.Completion.create(
     engine = "text-davinci-003",
