@@ -3,8 +3,8 @@ import os
 import openai
 
 
-openai.api_key = st.secrets.key["pass"]
-# openai.api.key = st.secrets["api_secret"]
+# openai.api_key = st.secrets.key["pass"]
+openai.api.key = st.secrets["api_secret"]
 # openai.api_key="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"
 # openai.api_key = os.getenv("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")
 def generate_response(prompt):
