@@ -20,7 +20,7 @@ elif output_size == "Concise":
 else:
     out_token = 516
 
-if len(article_text)>100:
+if len(article_text)>3:
     if st.button("Generate Summary",type='primary'):
     # Use GPT-3 to generate a summary of the article
         response = openai.Completion.create(
