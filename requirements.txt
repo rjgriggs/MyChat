@@ -1,4 +1,3 @@
 openai
 streamlit
-snowflake-connector-python
 cffi
