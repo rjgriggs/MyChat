@@ -1,46 +1,37 @@
-import streamlit as st
-import os
+# Import the required libraries
 import openai
+# import os
+import streamlit as st
 
+# Set the GPT-3 API key
+openai.api_key = st.secrets["api_secrets"]
 
-# openai.api_key = st.secrets.key["pass"]
-openai.api_key = st.secrets["api_secret"]
-# openai.api_key="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"
-# openai.api_key = os.getenv("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")
-def generate_response(prompt):
-  completions = openai.Completion.create(
-    engine = "text-davinci-003",
-    prompt = prompt,
-    max_tokens = 1024,
-    n = 1,
-    stop = None,
-    temperature = 0.5,
-    
-  )
-  message = completions.choices[0].text
-  return message
+# Read the text of the article from a file
+# with open("article.txt", "r") as f:
+#     article_text = f.read()
+article_text = st.text_area("Enter your scientific texts to summarize")
+output_size = st.radio(label = "What kind of output do you want?", 
+                    options= ["To-The-Point", "Concise", "Detailed"])
 
-st.title("chatbot : Streamlit + openai")
-if 'generated' not in st.session_state:
-  st.session_state['generated'] = []
-  
-if 'past' not in st.session_state:
-  st.session_state['past'] = []
-  
-def get_text():
-  input_text = st.text_input("you: ","Hello, how are you?", key="input")
-  return input_text
-  
-user_input = get_text()
-    
-if user_input:
-  output = generate_response(user_input)
-  # store the output
-  st.session_state.past.append(user_input)
-  st.session_state.generated.append(output)
-  
-if st.session_state['generated']:
-  
-  for i in range(len(st.session_state['generated']) -1, -1, -1):
-    message(st.session_state["generated"][i], key=str(i))
-    message(st.session_state['past'][i], is_user = True, key=str(i) + '_user')
+if output_size == "To-The-Point":
+    out_token = 50
+elif output_size == "Concise":
+    out_token = 128
+else:
+    out_token = 516
+
+if len(article_text)>100:
+    if st.button("Generate Summary",type='primary'):
+    # Use GPT-3 to generate a summary of the article
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt="Please summarize this scientific article for me in a few sentences: " + article_text,
+            max_tokens = out_token,
+            temperature = 0.5,
+        )
+        # Print the generated summary
+        res = response["choices"][0]["text"]
+        st.success(res)
+        st.download_button('Download result', res)
+else:
+    st.warning("Not enough words to summarize!")
